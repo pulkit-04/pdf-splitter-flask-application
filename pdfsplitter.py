@@ -5,7 +5,7 @@ def cropper(start,end,file):
     outPdf = PdfFileWriter()
     with open(file.split(".")[0]+"cropped"+".pdf","wb") as ostream:
         for page in range(start, end + 1):
-          outPdf.addPage(inputPdf.getPage(start))
+          outPdf.addPage(inputPdf.getPage(page))
           outPdf.write(ostream)
 
     ostream.close()
